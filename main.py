@@ -27,6 +27,6 @@ li = ['ItemNewAll', 'ItemNewSpecial']
 for item_list in li:
     books = aladin.search_list(item_list, num=100)
     use_db.book_to_db(books, cursor, connection)
-    logging.info(f"{books}\n책 데이터 저장 완료\n")
+    logging.info(f"책 {len(books)} 권 데이터 저장 완료\n")
 # 연결 종료하기
 connection.close()

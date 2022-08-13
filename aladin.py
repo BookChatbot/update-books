@@ -1,7 +1,10 @@
 import requests
 import json
 import os
+import logging
 
+logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',
+                    level=logging.INFO, filename='log/update.log')
 
 key = os.environ.get('ALADIN_KEY')
 
@@ -38,7 +41,7 @@ def json_to_dict(url, informs):
             cnt += 1
 
     except Exception as e:
-        print(e)
+        logging.error(e)
 
     return informs
 

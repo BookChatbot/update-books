@@ -1,4 +1,8 @@
 import MySQLdb
+import logging
+
+logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',
+                    level=logging.INFO, filename='log/update.log')
 
 
 class UseDB:
@@ -37,4 +41,4 @@ class UseDB:
                     # 커밋하기
                     connection.commit()
             except Exception as e:
-                print(e)
+                logging.error(e)
