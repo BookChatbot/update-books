@@ -37,8 +37,9 @@ def json_to_dict(url, informs):
             informs[cnt] = inform
             cnt += 1
 
-    except:
-        pass
+    except Exception as e:
+        print(e)
+
     return informs
 
 
